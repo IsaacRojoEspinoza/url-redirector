@@ -17,24 +17,15 @@ app = FastAPI(title="URL Redirector")
 # CORS
 app.add_middleware(
     CORSMiddleware,
-<<<<<<< HEAD
     allow_origins=[
-        "http://deceyec.cloud/",
+        "http://deceyec.cloud/api",
         "http://localhost:3000"
     ],
-=======
-    allow_origins=["http://localhost:5174"],
-    allow_origins=["http://deceyec.cloud/api"],
-    allow_origins=["http://deceyec.cloud/generador-qr"],
-    allow_origins=["http://deceyec.cloud"],
->>>>>>> 8a81b1cbfe961f729fac2e33b0bdb7e3862750bc
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-# Path al frontend
 frontend_path = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "frontend", "dist")
 )
