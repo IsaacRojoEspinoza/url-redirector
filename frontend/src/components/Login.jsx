@@ -17,7 +17,7 @@ function Login() {
       localStorage.removeItem('token');
 
       const response = await axios.post(
-        'http://localhost:8000/api/login',
+        'http://195.35.36.251:8000/api/login',
         new URLSearchParams({
           username: email,
           password: password,

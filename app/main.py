@@ -18,6 +18,9 @@ app = FastAPI(title="URL Redirector")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5174"],
+    allow_origins=["http://deceyec.cloud/api"],
+    allow_origins=["http://deceyec.cloud/generador-qr"],
+    allow_origins=["http://deceyec.cloud"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

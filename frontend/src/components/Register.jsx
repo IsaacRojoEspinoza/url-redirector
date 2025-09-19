@@ -13,7 +13,7 @@ function Register() {
     setError('');
     try {
       await axios.post(
-        'http://localhost:8000/api/register',
+        'http://195.35.36.251:8000/api/register',
         { email, password },
         { headers: { 'Content-Type': 'application/json' } }
       );

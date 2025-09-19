@@ -21,7 +21,7 @@ function Redirects() {
       }
 
       try {
-        const response = await axios.get('http://localhost:8000/api/redirects/', {
+        const response = await axios.get('http://195.35.36.251:8000/api/redirects/', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setRedirects(response.data.redirects || []);
@@ -46,7 +46,7 @@ function Redirects() {
     const token = localStorage.getItem('token');
 
     try {
-      await axios.post('http://localhost:8000/api/redirects/', {
+      await axios.post('http://195.35.36.251:8000/api/redirects/', {
         shortcode,
         target_url: targetUrl
       }, {
@@ -56,7 +56,7 @@ function Redirects() {
         }
       });
 
-      const response = await axios.get('http://localhost:8000/api/redirects/', {
+      const response = await axios.get('http://195.35.36.251:8000/api/redirects/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRedirects(response.data.redirects || []);
@@ -71,7 +71,7 @@ function Redirects() {
     const token = localStorage.getItem('token');
 
     try {
-      await axios.delete(`http://localhost:8000/api/redirects/${id}`, {
+      await axios.delete(`http://195.35.36.251:8000/api/redirects/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRedirects(redirects.filter(r => r.id !== id));
@@ -85,7 +85,7 @@ function Redirects() {
     const token = localStorage.getItem('token');
 
     try {
-      await axios.put(`http://localhost:8000/api/redirects/${editingId}`, {
+      await axios.put(`http://195.35.36.251:8000/api/redirects/${editingId}`, {
         shortcode: editShortcode,
         target_url: editTargetUrl
       }, {
@@ -95,7 +95,7 @@ function Redirects() {
         }
       });
 
-      const response = await axios.get('http://localhost:8000/api/redirects/', {
+      const response = await axios.get('http://195.35.36.251:8000/api/redirects/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRedirects(response.data.redirects || []);
